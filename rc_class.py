@@ -104,31 +104,29 @@ class NextGenResComp(nn.Module):
         Initialise parameters of NextGenResComp
 
         Args: 
-            len_x: torch.tensor
+        -----
+        len_x: torch.tensor
             Length of input data (number of coupled time series)
-
-            len_o: torch.tensor
+        len_o: torch.tensor
             Length of feature vector
-
-        Returns:
-            Nothing
         """
         super(NextGenResComp, self).__init__()
 
         # Single layer of trainable weights maps feature vector to output
         self.w = nn.Linear(len_o, len_x)
-
-    
+   
     def forward(self, x):
         """
         Forward pass of NextGenResComp
 
         Args:
-            x:  torch.tensor
+        -----
+        x:  1D torch.tensor
             Input features
 
         Returns:
-            output: torch.tensor
+        -------
+        output: 1D torch.tensor
             Output/prediction at next time coordinate
         """
 
